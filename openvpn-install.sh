@@ -197,7 +197,7 @@ else
 	read -p "IP address: " -e -i $IP IP
 	echo ""
 	echo "What port do you want for OpenVPN?"
-	read -p "Port: " -e -i 1194 PORT
+	read -p "Port: " -e -i 443 PORT
 	echo ""
 	echo "What protocol do you want for OpenVPN?"
 	echo "Unless UDP is blocked, you should not use TCP (unnecessarily slower)"
@@ -212,7 +212,7 @@ else
 	echo "   4) OpenDNS (Anycast: worldwide)"
 	echo "   5) Google (Anycast: worldwide)"
 	while [[ $DNS != "1" && $DNS != "2" && $DNS != "3" && $DNS != "4" && $DNS != "5" ]]; do
-		read -p "DNS [1-5]: " -e -i 2 DNS
+		read -p "DNS [1-5]: " -e -i 5 DNS
 	done
 	echo ""
 	echo "See https://github.com/Angristan/OpenVPN-install#encryption to learn more about "
@@ -231,7 +231,7 @@ else
 	echo "   6) CAMELLIA-256-CBC"
 	echo "   7) SEED-CBC"
 	while [[ $CIPHER != "1" && $CIPHER != "2" && $CIPHER != "3" && $CIPHER != "4" && $CIPHER != "5" && $CIPHER != "6" && $CIPHER != "7" ]]; do
-		read -p "Cipher [1-7]: " -e -i 1 CIPHER
+		read -p "Cipher [1-7]: " -e -i 3 CIPHER
 	done
 	case $CIPHER in
 		1)
